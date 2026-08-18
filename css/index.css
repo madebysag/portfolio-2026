@@ -22,8 +22,6 @@
 
 .dark-theme {
     --grey: hsl(0, 0%, 85%);
-    /* --grey-1: 
-    --grey-2:  */
     --black: hsl(0, 0%, 98%);
     
     background-color: hsl(0, 5%, 15%);
@@ -33,6 +31,20 @@
 button, a {
     cursor: pointer;
 }
+
+/* *
+ * Page nav in playground and other pages
+*/
+nav.page_nav {
+    padding: 3rem 10vw 0rem;
+}
+
+nav.page_nav a > span {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    padding: 0.2rem 0.5rem;
+}
+    
 
 
 /* 
