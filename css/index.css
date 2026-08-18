@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--grey);
+}
+
+:root {
+    --grey: hsl(0, 0%, 45%);
+    --grey-1: hsl(0, 0%, 85%);
+    --grey-2: hsl(0, 0%, 98%);
+    --black: hsl(0, 5%, 15%);
+    
+    background-color: hsl(0, 0%, 99%);
+}
+
+.dark-theme {
+    --grey: hsl(0, 0%, 85%);
+    /* --grey-1: 
+    --grey-2:  */
+    --black: hsl(0, 0%, 98%);
+    
+    background-color: hsl(0, 5%, 15%);
+}
+
+
+button, a {
+    cursor: pointer;
+}
+
+
+/* 
+ * Header
+ 
+ */
+header {
+    padding: 10vh 10vw 1rem;
+}
+
+header > div:first-child {
+    display: flex;
+    margin-bottom: 0.2rem;
+}
+
+header > div:first-child > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -0.5rem 0.5rem 0rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+header > div:first-child > button:hover {
+    border: var(--grey-1) 1px solid;
+}
+
+header h4 {
+    color: var(--black);
+    font-weight: 700;
+}
+
+/*
+ * Main
+
+ */
+main {
+    padding: 1rem 10vw 1rem; 
+}
+
+main > section {
+    max-width: 512px;
+}
+
+main > section > p {
+    margin-bottom: 1rem;
+}
+
+main > section > p > a {
+    font-weight: 700;
+    color: var(--black);
+    text-decoration: underline;
+    text-decoration-color: var(--grey-1);
+    text-decoration-thickness: 2px;
+
+}
+
+main > section.projects {
+    padding-top: 2rem;
+    max-width: 512px;
+}
+
+main > section.projects > nav > ul {
+    list-style: none;
+    display: flex;
+    padding: 1rem 0;
+}
+
+main > section.projects > nav > ul button {
+    padding-right: 0.5rem;
+    margin-right: 1rem;
+}
+
+main > section.projects > nav > ul button.active {
+    font-weight: 700;
+    color: var(--black);
+    text-decoration: underline;
+    text-decoration-color: var(--grey-1);
+    text-decoration-thickness: 2px;
+}
+
+section.projects > div {
+    border-top: var(--grey-1) 1px solid;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    padding: 1rem 0 2rem;
+}
+
+section.projects > div > .title p {
+    font-size: 14px;
+}
+
+section.projects > div > .list a {
+    display: inline-block;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    padding-right: 0.5rem;
+    margin-bottom:  0.8rem;
+}
+
+footer{
+    font-size: 10px;
+    padding: 5rem 10vw 0.5rem;
+}
