@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark-them">
+<html lang="en" class="dark-theme">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,75 +11,108 @@
 
 </head>
 <body>
+    <div class="landing_page">
+        
+        <nav class="page_nav">
+            <a href="#">
+                <svg  width="21.105" height="8.361">
+                    <use href="./static/icons/back_arrow.svg#back_arrow"></use>
+                </svg>
+                <span>Back Home</span>
+            </a>
+        </nav>
+
+        <header>
+            <div >
+                <h4 class="text-black" >Welcome to my Demos/Playground</h4>
+                <button type="button"><img src="./static/icons/moon.svg" alt="Theme Toggle" ></button>
+            </div>
+            <div><p>Sulaimon Abdulgafar</p></div>
+        </header>
+
+        <main>
+            <section>
+                <p>Collection of my arts, designs, and experimentations. </p>
+            </section>
+
+            <section class="projects">
+                <nav>
+                    <ul>
+                        <li><button class="active">All</button></li>
+                        <li><button>UI</button></li>
+                        <li><button>3D/WebbGL</button></li>
+                        <li><button>Canvas</button></li>
+                        <li><button>Others</button></li>
+                    </ul>
+                </nav>
+
+                <div class="section">
+                    <div class="title"><p>UI</p></div>
+                    <div class="list">
+                        <div><a href="">Carousel</a></div>
+                        <div><a href="">Accordion</a></div>
+                        <div><a href="">Card Transform on Scroll</a></div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="title"><p>3D/WebGL</p></div>
+                    <div class="list">
+                        <div><a href="">Univase Scene</a></div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="title"><p>Canvas</p></div>
+                    <div class="list">
+                        <div><a href="">Ball Physics</a></div>
+                        <div><a href="">Scratch Reveal</a></div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="title"><p>Others</p></div>
+                    <div class="list">
+                        <div><a href="">Text Reveal</a></div>
+                        <div><a href="">Loading Animation</a></div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+    </div>
+
+
+    <div class="demos_display" hidden >
+
+        <nav class="page_nav">
+            <a href="#">
+                <svg  width="21.105" height="8.361">
+                    <use href="./static/icons/back_arrow.svg#back_arrow"></use>
+                </svg>
+                <span>Back to Playground Menu</span>
+            </a>
+        </nav>
+
+        <header>
+            <div >
+                <h4 class="text-black" >Univase 3D Scene</h4>
+                <button type="button"><img src="./static/icons/moon.svg" alt="Theme Toggle" ></button>
+            </div>
+            <div><p>Sulaimon Abdulgafar</p></div>
+        </header>
+
+        <section hidden >
+            <p>The art description, if any </p>
+        </section>
+
+        <section class="display_wrapper"></section>
+
+    </div>
     
-    <nav class="page_nav">
-        <a href="#">
-            <svg  width="21.105" height="8.361">
-                <use href="./static/icons/back_arrow.svg#back_arrow"></use>
-            </svg>
-            <span>Back Home</span>
-        </a>
-    </nav>
+    
+    <footer>BLURRING THE BORDER »»&angle;=º</footer>
 
-    <header>
-        <div >
-            <h4 class="text-black" >Welcome to my Demos/Playground</h4>
-            <button type="button"><img src="./static/icons/moon.svg" alt="Theme Toggle" ></button>
-        </div>
-        <div><p>Sulaimon Abdulgafar</p></div>
-    </header>
-
-    <main>
-        <section>
-            <p>Collection of my arts, designs, and experimentations. </p>
-        </section>
-
-        <section class="projects">
-            <nav>
-                <ul>
-                    <li><button class="active">All</button></li>
-                    <li><button>UI</button></li>
-                    <li><button>3D/WebbGL</button></li>
-                    <li><button>Canvas</button></li>
-                    <li><button>Others</button></li>
-                </ul>
-            </nav>
-
-            <div class="section">
-                <div class="title"><p>UI</p></div>
-                <div class="list">
-                    <div><a href="">Carousel</a></div>
-                    <div><a href="">Accordion</a></div>
-                    <div><a href="">Card Transform on Scroll</a></div>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="title"><p>3D/WebGL</p></div>
-                <div class="list">
-                    <div><a href="">Univase Scene</a></div>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="title"><p>Canvas</p></div>
-                <div class="list">
-                    <div><a href="">Ball Physics</a></div>
-                    <div><a href="">Scratch Reveal</a></div>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="title"><p>Others</p></div>
-                <div class="list">
-                    <div><a href="">Text Reveal</a></div>
-                    <div><a href="">Loading Animation</a></div>
-                </div>
-            </div>
-
-        </section>
-    </main>
-
-    <footer>BLURRING THE BORDER &angle;=</footer>
 </body>
 </html>
