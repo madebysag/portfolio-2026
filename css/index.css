@@ -166,7 +166,7 @@ footer{
 section.display_wrapper {
     margin: 3rem 10vw 0rem;
     padding: 0;
-    border: var(--grey) 2px solid;
+    border: var(--grey-1) 2px solid;
     border-radius: 10px;
     height: 80vh;
     max-width: 80vw;
