@@ -1,3 +1,4 @@
+import { Transistion } from "./utils/Transist.js"
 import {Tween} from "./utils/Tween.js"
 
 // Grab Elements
@@ -66,11 +67,11 @@ class BoxWorker {
         const cells = rows * cols;
 
         for (let i = 0; i < cells; i++) {
-            const x = i % cols,
-                y = Math.floor(i / cols),
-                duration = Math.floor(5000 * Math.random());
+            const x = (i % cols) * size,
+                y = Math.floor(i / cols) * size,
+                speed = Math.floor(Math.random() * 5 + 1);
 
-            const box = { size, x, y, duration}
+            const box = { size, x, y, speed, alpha: 0}
             
             boxes.push(box)
         }
@@ -88,6 +89,11 @@ class BoxWorker {
             ctx.globalAlpha = box.alpha;
             ctx.fillRect(box.x, box.y, box.size, box.size)
 
+            // ctx.strokeStyle = "red"
+            // ctx.lineWidth = 4
+            // ctx.strokeRect(box.x, box.y, box.size, box.size)
+            
+
             ctx.restore()
         })
     }
@@ -95,15 +101,59 @@ class BoxWorker {
 
 BoxWorker.boxes = BoxWorker.makeBoxes()
 
-console.log(BoxWorker.makeBoxes());
+// console.log(BoxWorker.makeBoxes());
 
 
-Tween.easeInOut(ball, {x: 900, y: 700, alpha: 0 }, 5000, render, tweenBack);
+// Tween.easeInOut(ball, {x: 900, y: 700, alpha: 0 }, 5000, render, tweenBack);
 
-function tweenBack() {
-    Tween.easeInOut(ball, {x: 100, y: 100, alpha: 1 }, 5000, render, render);
-}
+// Tween.easeInOut(
+//     BoxWorker.boxes,
+//     {alpha: 1 }, 
+//     5000, 
+//     render, 
+//     tweenBack // test //render
+// );
+
+// function tweenBack() {
+//     Tween.linear(
+//         BoxWorker.boxes,
+//         {alpha: 0 }, 
+//         5000, 
+//         render, 
+//         test //render
+//     );
+// }
 
 function render() {
     BoxWorker.render(context, BoxWorker.boxes)
+}
+
+function test (){
+
+    context.save()
+    context.globalAlpha = -4
+    context.moveTo(0, 0)
+    context.fillStyle = "blue"
+    context.fillRect(50, 50, 100, 100)
+    context.restore()
+}
+
+Transistion.showBoxes(
+    BoxWorker.boxes,
+    1, 
+    render, 
+    goBack // test //render
+);
+
+function goBack() {
+
+    setTimeout(() => {
+        
+    }, 5000);
+    Transistion.hideBoxes(
+        BoxWorker.boxes,
+        1, 
+        render, 
+        test //render
+    );
 }

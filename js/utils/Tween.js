@@ -20,36 +20,60 @@ const  easeFunctions = {
 
 export class Tween {
 
-    static _tween(obj, props, duration, easingFunc, onProgress, onComplete) {
+    static _tween(objects, props, duration, easingFunc, onProgress, onComplete) {
 
-        const [starts, changes] = [{}, {}]
+        // const [starts, changes] = [{}, {}]
         let startTime = performance.now();
+        
+        objects.forEach(obj => {
+            
+            for(const prop in props) {
+                
+                
+                obj._starts = {}
+                obj._changes = {}
 
-		for(const prop in props) {
-			starts[prop] = obj[prop];
-			changes[prop] = props[prop] - starts[prop];
-		}
+                obj._starts[prop] = obj[prop];
+                obj._changes[prop] = props[prop] - obj._starts[prop];
+            }
+        })
 
         
 		requestAnimationFrame(animate);
 
-		function animate(timestamp) {
+        let lastTimestamp;   // for calculation Delta time
 
-			let time = timestamp - startTime; // How many time as passed
+		function animate(currentTimestamp) {
 
-			if(time < duration) { 
-				for(const prop in props) {
-					obj[prop] = easingFunc(time, starts[prop], changes[prop], duration);
-				}
+            const delta = lastTimestamp ? currentTimestamp - lastTimestamp : 16
+
+            lastTimestamp = currentTimestamp
+            
+            let elapsedTime = currentTimestamp - startTime; // How many time as passed
+
+			if(elapsedTime < duration) { 
+                
+                objects.forEach(obj => {
+
+                    for(const prop in props) {
+                        obj[prop] = easingFunc(elapsedTime, obj._starts[prop], obj._changes[prop], duration);
+                    }
+                })
+                
 				onProgress();
 				requestAnimationFrame(animate);
 
 			} else {
 
-				time = duration;
-				for(const prop in props) {
-					obj[prop] = easingFunc(time, starts[prop], changes[prop], duration);
-				}
+				elapsedTime = duration;
+
+				objects.forEach(obj => {
+
+                    for(const prop in props) {
+                        obj[prop] = easingFunc(elapsedTime, obj._starts[prop], obj._changes[prop], duration);
+                    }
+                })
+                
 				onComplete();
 			}
 		}
