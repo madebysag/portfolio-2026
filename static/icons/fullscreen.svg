@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.008" height="15.341" viewBox="0 0 16.008 15.341">
+  <g id="full" data-name="Group 8" transform="translate(1 1)">
+    <path id="Path_9" data-name="Path 9" d="M3620.7,2741.595v5.174h5.331" transform="translate(-3620.7 -2733.585)" fill="none" stroke="#737373" stroke-width="2"/>
+    <path id="Path_12" data-name="Path 12" d="M0,0V5.174H5.331" transform="translate(8.678 13.341) rotate(-90)" fill="none" stroke="#737373" stroke-width="2"/>
+    <path id="Path_10" data-name="Path 10" d="M0,0V5.174H5.331" transform="translate(14.008 5.174) rotate(180)" fill="none" stroke="#737373" stroke-width="2"/>
+    <path id="Path_11" data-name="Path 11" d="M0,0V5.174H5.331" transform="translate(5.174 0) rotate(90)" fill="none" stroke="#737373" stroke-width="2"/>
+  </g>
+
+  <g id="mini" data-name="Group 6" transform="translate(0 0)" >
+    <path id="Path_9" data-name="Path 9" d="M3620.7,2741.594v5.577h5.746" transform="translate(-3609.833 -2741.594)" fill="none" stroke="#737373" stroke-width="2"/>
+    <path id="Path_10" data-name="Path 10" d="M0,0V5.577H5.746" transform="translate(5.746 16.025) rotate(180)" fill="none" stroke="#737373" stroke-width="2"/>
+  </g>
+</svg>

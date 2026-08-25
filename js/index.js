@@ -27,31 +27,11 @@ toggleButtons.forEach(btn => {
 
 
 
-
-
 // about transisiton
 const context = canvas.getContext("2d"),
     width = canvas.width = window.innerWidth,
-    height = canvas.height = window.innerHeight,
-    ball = {
-        x: 100,
-        y: 100,
-        alpha: 1
-    };
+    height = canvas.height = window.innerHeight;
 
-// Tween.easeInOut(ball, {x: 900, y: 700, alpha: 0 }, 1000, render, tweenBack);
-
-// function tweenBack() {
-//     Tween.easeInOut(ball, {x: 100, y: 100, alpha: 1 }, 1000, render, render);
-// }
-
-// function render() {
-//     context.clearRect(0, 0, width, height);
-//     context.globalAlpha = ball.alpha;
-//     context.beginPath();
-//     context.arc(ball.x, ball.y, 20, 0, Math.PI * 2, false);
-//     context.fill();
-// }
 
 class BoxWorker {
     static makeBoxes() {
@@ -60,7 +40,7 @@ class BoxWorker {
         const width = window.innerWidth
         const height = window.innerHeight
 
-        const size = width > 600 ? 100 : 50;
+        const size = width > 600 ? 50 : 25;
         
         const cols = Math.ceil(width / size);
         const rows = Math.ceil(height / size);
@@ -76,8 +56,6 @@ class BoxWorker {
             boxes.push(box)
         }
 
-
-
         return boxes;
     }
 
@@ -89,11 +67,6 @@ class BoxWorker {
             ctx.globalAlpha = box.alpha;
             ctx.fillRect(box.x, box.y, box.size, box.size)
 
-            // ctx.strokeStyle = "red"
-            // ctx.lineWidth = 4
-            // ctx.strokeRect(box.x, box.y, box.size, box.size)
-            
-
             ctx.restore()
         })
     }
@@ -101,35 +74,10 @@ class BoxWorker {
 
 BoxWorker.boxes = BoxWorker.makeBoxes()
 
-// console.log(BoxWorker.makeBoxes());
-
-
-// Tween.easeInOut(ball, {x: 900, y: 700, alpha: 0 }, 5000, render, tweenBack);
-
-// Tween.easeInOut(
-//     BoxWorker.boxes,
-//     {alpha: 1 }, 
-//     5000, 
-//     render, 
-//     tweenBack // test //render
-// );
-
-// function tweenBack() {
-//     Tween.linear(
-//         BoxWorker.boxes,
-//         {alpha: 0 }, 
-//         5000, 
-//         render, 
-//         test //render
-//     );
-// }
-
 function render() {
     BoxWorker.render(context, BoxWorker.boxes)
 }
-
 function test (){
-
     context.save()
     context.globalAlpha = -4
     context.moveTo(0, 0)
@@ -148,12 +96,12 @@ Transistion.showBoxes(
 function goBack() {
 
     setTimeout(() => {
-        
-    }, 5000);
-    Transistion.hideBoxes(
+      Transistion.hideBoxes(
         BoxWorker.boxes,
         1, 
         render, 
         test //render
-    );
+    );  
+    }, 5000);
+    
 }

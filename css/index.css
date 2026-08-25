@@ -188,4 +188,24 @@ section.display_wrapper {
     height: 80vh;
     max-width: 80vw;
     overflow: hidden;
+    position: relative;
+}
+
+section.display_wrapper > button {
+    padding: .6rem .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 1vw;
+    top: 1vw;
+    background-color: var(--grey-1);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+section.display_wrapper > button:hover {
+    opacity: 0.75;
+    transform: scale(1.2);
 }
