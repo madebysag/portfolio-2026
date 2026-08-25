@@ -86,12 +86,19 @@ function test (){
     context.restore()
 }
 
-Transistion.showBoxes(
+Transistion.hideBoxes(
     BoxWorker.boxes,
     1, 
     render, 
     goBack // test //render
 );
+
+// Transistion.showBoxes(
+//     BoxWorker.boxes,
+//     1, 
+//     render, 
+//     goBack // test //render
+// );
 
 function goBack() {
 
