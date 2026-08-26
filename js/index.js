@@ -1,15 +1,11 @@
-import { Transistion } from "./utils/Transist.js"
-import {Tween} from "./utils/Tween.js"
+import { BoxWorker, Transistion } from "./utils/Transistion.js"
+// import {Tween} from "./utils/Tween.js"
 
-// Grab Elements
-const canvasWrapper = document.querySelector(".transistion_wrapper")
-const canvas = canvasWrapper.children[0]
-
+// About them switching
 const toggleButtons = [...document.querySelectorAll(".theme_toggle")]
 const [moonUrl, sunUrl] = [ "./static/icons/moon.svg", "./static/icons/sun.svg"]
 
-// About them switching
-let isDarkMode = window.matchMedia("(prefers-colo-scheme: dark)").matches ?? false;
+let isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches ?? false;
 
 const changeTheme = () => {
     document.documentElement.classList.toggle("dark-theme")
@@ -28,87 +24,51 @@ toggleButtons.forEach(btn => {
 
 
 // about transisiton
+const fadeContent = document.querySelector(".transistion_wrapper > .fade_content")
+const canvasWrapper = document.querySelector(".transistion_wrapper")
+const canvas = canvasWrapper.children[0]
+
 const context = canvas.getContext("2d"),
     width = canvas.width = window.innerWidth,
     height = canvas.height = window.innerHeight;
 
 
-class BoxWorker {
-    static makeBoxes() {
-        const boxes = []
+function render() {
+    BoxWorker.render(context, BoxWorker.boxes, width, height)
+}
 
-        const width = window.innerWidth
-        const height = window.innerHeight
+function completeTransistion() {
+    canvasWrapper.style.opacity = 0
+    fadeContent.style.opacity = 0
+}
 
-        const size = width > 600 ? 50 : 25;
-        
-        const cols = Math.ceil(width / size);
-        const rows = Math.ceil(height / size);
-        const cells = rows * cols;
+function fadein() {
 
-        for (let i = 0; i < cells; i++) {
-            const x = (i % cols) * size,
-                y = Math.floor(i / cols) * size,
-                speed = Math.floor(Math.random() * 5 + 1);
+    Transistion.showBoxes(
+        BoxWorker.boxes,
+        0.5, 
+        render, 
+        fadeOut
+    );
+}
 
-            const box = { size, x, y, speed, alpha: 0}
-            
-            boxes.push(box)
-        }
+function fadeOut() {
 
-        return boxes;
-    }
+    fadeContent.style.opacity = 1
+    setTimeout(() => {
 
-    static render(ctx, boxes) {
-        ctx.clearRect(0, 0, width, height);
-        boxes.forEach(box => {
-            ctx.save()
-
-            ctx.globalAlpha = box.alpha;
-            ctx.fillRect(box.x, box.y, box.size, box.size)
-
-            ctx.restore()
-        })
-    }
+      Transistion.hideBoxes(
+        BoxWorker.boxes,
+        0.5, 
+        render, 
+        completeTransistion
+    );  
+    }, 2000);
+    
 }
 
 BoxWorker.boxes = BoxWorker.makeBoxes()
 
-function render() {
-    BoxWorker.render(context, BoxWorker.boxes)
-}
-function test (){
-    context.save()
-    context.globalAlpha = -4
-    context.moveTo(0, 0)
-    context.fillStyle = "blue"
-    context.fillRect(50, 50, 100, 100)
-    context.restore()
-}
+fadein()
 
-Transistion.hideBoxes(
-    BoxWorker.boxes,
-    1, 
-    render, 
-    goBack // test //render
-);
 
-// Transistion.showBoxes(
-//     BoxWorker.boxes,
-//     1, 
-//     render, 
-//     goBack // test //render
-// );
-
-function goBack() {
-
-    setTimeout(() => {
-      Transistion.hideBoxes(
-        BoxWorker.boxes,
-        1, 
-        render, 
-        test //render
-    );  
-    }, 5000);
-    
-}

@@ -17,6 +17,47 @@ const  utils = {
 	}
 }
 
+export class BoxWorker {
+    static makeBoxes() {
+        const boxes = []
+
+        const width = window.innerWidth
+        const height = window.innerHeight
+
+        const size = width > 600 ? 50 : 25;
+        
+        const cols = Math.ceil(width / size);
+        const rows = Math.ceil(height / size);
+        const cells = rows * cols;
+
+        for (let i = 0; i < cells; i++) {
+            const x = (i % cols) * size,
+                y = Math.floor(i / cols) * size,
+                speed = Math.floor(Math.random() * 5 + 1);
+
+            const box = { size, x, y, speed, alpha: 0}
+            
+            boxes.push(box)
+        }
+
+        return boxes;
+    }
+
+    static render(ctx, boxes, width, height) {
+
+        ctx.clearRect(0, 0, width, height);
+        
+        boxes.forEach(box => {
+            ctx.save()
+
+            ctx.globalAlpha = box.alpha;
+            ctx.fillRect(box.x, box.y, box.size, box.size)
+
+            ctx.restore()
+        })
+    }
+}
+
 export class Transistion {
 
     static transit(boxes, duration, onProgress, onComplete, show) {
@@ -52,6 +93,7 @@ export class Transistion {
                     calculatedAlpha = utils.clamp(calculatedAlpha, 0, 1);
 
                     // console.log(calculatedAlpha, boxDuration, box.speed)
+                    // console.log(calculatedAlpha)
                     
                     box.alpha = calculatedAlpha
                 })
@@ -74,6 +116,8 @@ export class Transistion {
                     calculatedAlpha = utils.clamp(calculatedAlpha, 0, 1);
                     
                     box.alpha = calculatedAlpha
+
+                    
                 })
                 
                 onComplete();

@@ -18,6 +18,7 @@
     --black: hsl(0, 5%, 15%);
     
     background-color: hsl(0, 0%, 99%);
+    transition: background-color 0.2s ease-in;
 }
 
 .dark-theme {
@@ -55,6 +56,12 @@ nav.page_nav a > span {
     top: 0;
     left: 0;
     pointer-events: none;
+    background-color: hsl(0, 0%, 99%);
+    transition: opacity 1s ease-in;
+}    
+
+.dark-theme .transistion_wrapper {
+    background-color: hsl(0, 5%, 15%);
 }    
 
 .transistion_wrapper > canvas {
@@ -62,6 +69,18 @@ nav.page_nav a > span {
     height: 100%;
 }
 
+.transistion_wrapper > .fade_content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%;
+    mix-blend-mode: difference;
+    font-size: 1rem;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 0.8s ease-in;
+}
 
 
 /* 
@@ -168,44 +187,4 @@ section.projects > div > .list a {
 footer{
     font-size: 10px;
     padding: 5rem 10vw 0.5rem;
-}
-
-
-
-/* **
-**  The Playground section
-*/
-.demos_display > section {
-    padding: 3rem 10vw 0rem;
-    max-width: 512px;
-}
-
-section.display_wrapper {
-    margin: 3rem 10vw 0rem;
-    padding: 0;
-    border: var(--grey-1) 2px solid;
-    border-radius: 10px;
-    height: 80vh;
-    max-width: 80vw;
-    overflow: hidden;
-    position: relative;
-}
-
-section.display_wrapper > button {
-    padding: .6rem .8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    right: 1vw;
-    top: 1vw;
-    background-color: var(--grey-1);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-section.display_wrapper > button:hover {
-    opacity: 0.75;
-    transform: scale(1.2);
 }

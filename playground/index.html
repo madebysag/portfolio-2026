@@ -10,6 +10,44 @@
 
     <title>Sulaimon Abdulgafar — Playground</title>
 
+    <style>
+        .demos_display > section {
+            padding: 3rem 10vw 0rem;
+            max-width: 512px;
+        }
+
+        section.display_wrapper {
+            margin: 3rem 10vw 0rem;
+            padding: 0;
+            border: var(--grey-1) 2px solid;
+            border-radius: 10px;
+            height: 80vh;
+            max-width: 80vw;
+            overflow: hidden;
+            position: relative;
+        }
+
+        section.display_wrapper > button {
+            padding: .6rem .8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            right: 1vw;
+            top: 1vw;
+            background-color: var(--grey-1);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        section.display_wrapper > button:hover {
+            opacity: 0.75;
+            transform: scale(1.2);
+        }
+
+    </style>
+
 </head>
 <body>
     <div class="transistion_wrapper" hidden>
@@ -19,7 +57,7 @@
     <div class="landing_page">
         
         <nav class="page_nav">
-            <a href="#">
+            <a href="/">
                 <svg  width="21.105" height="8.361">
                     <use href="../static/icons/back_arrow.svg#back_arrow"></use>
                 </svg>
