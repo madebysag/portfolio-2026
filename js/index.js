@@ -72,3 +72,36 @@ BoxWorker.boxes = BoxWorker.makeBoxes()
 fadein()
 
 
+// About projects tab
+const tableLinks = document.querySelectorAll(".table_list .table_nav")
+const tableSections = document.querySelectorAll(".table_list .section")
+
+if (tableLinks) {
+    tableLinks.forEach(link => {
+        link.addEventListener("click", e => {
+
+            tableLinks.forEach(link => {
+                link.classList.remove("active")
+            })
+            
+            e.target.classList.add("active")
+            
+            const target = e.target.dataset.targetId;
+
+            if (target == "all") {
+
+                tableSections.forEach(section => {
+                    section.style.display = "grid"
+                });
+
+            } else {
+                
+                tableSections.forEach(section => {
+                    if (section.dataset.target == target) section.style.display = "grid";
+                    else section.style.display = "none";
+                })
+                
+            }
+        })
+    })
+}

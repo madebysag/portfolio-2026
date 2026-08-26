@@ -39,17 +39,17 @@
 
         </section>
 
-        <section class="projects">
+        <section class="projects table_list">
             <nav>
                 <ul>
-                    <li><button class="active">All</button></li>
-                    <li><button>Design Engineering</button></li>
-                    <li><button>Systems & Back-end</button></li>
-                    <li><button>Others</button></li>
+                    <li><button data-target-id="all" class="active table_nav">All</button></li>
+                    <li><button data-target-id="design" class="table_nav">Design Engineering</button></li>
+                    <li><button data-target-id="systems" class="table_nav">Systems & Back-end</button></li>
+                    <li><button data-target-id="others" class="table_nav">Others</button></li>
                 </ul>
             </nav>
 
-            <div class="section">
+            <div data-target="design" class="section">
                 <div class="title"><p>Design Engineering</p></div>
                 <div class="list">
                     <div><a href="">Stacker</a></div>
@@ -58,14 +58,14 @@
                 </div>
             </div>
 
-            <div class="section">
+            <div data-target="systems" class="section">
                 <div class="title"><p>Systems & Back-ends</p></div>
                 <div class="list">
                     <div><a href="">Squizz</a></div>
                 </div>
             </div>
 
-            <div class="section">
+            <div data-target="others" class="section">
                 <div class="title"><p>Others</p></div>
                 <div class="list">
                     <div><a href="">Demos/Playground</a></div>
