@@ -1,0 +1,116 @@
+:root {
+   --black: #000000;
+   --white: #ff00f0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    color: var(--black);
+    text-decoration: none;
+}
+
+main {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+}
+
+
+/**
+* Carousel
+*/
+
+ .gallery {
+    height: 25rem;
+    width: 30rem;
+    position: relative;
+    overflow: hidden;
+ }
+
+ .gallery .forward-btn,
+ .gallery .backward-btn {
+   border: red solid 1px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+ }
+ 
+
+ .gallery .forward-btn{
+    right: 0;
+    transform: translateY(-50%) scalex(-1);
+ }
+
+ .gallery .backward-btn {
+    left: 0;
+    transform: translateY(-50%);
+ }
+
+ .gallery .slides-container {
+    width: 80%;
+    height: 90%;
+    margin: 0 auto;
+    overflow: visible;
+    /* padding: 0.5rem; */
+    display: flex;
+    /* transform: rotateZ(-90deg); */
+    transition: all 1s;
+    }
+    
+ .slides-container .slide {
+    min-height: 100%;
+    min-width: 100%;
+    overflow: hidden;
+     display: flex;
+    justify-content: center;
+    position: relative;
+ }
+
+ .slides-container .product-pic {
+    height: 100%;
+    /* display: none; */
+    /* margin: 0.5rem auto; */
+    /* min-height: 100%; */
+    /* min-width: 100%; */
+    /* object-fit: cover; */
+    /* aspect-ratio: 3 / 4; */
+    /* transform: rotateZ(90deg); */
+ }
+
+ .slides-container .description {
+   position: absolute;
+   bottom: 10%;
+   text-align: center;
+   padding: 0 0.8rem;
+ }
+
+ .gallery-options {
+   text-align: center;
+ }
+
+
+ .pic-selector {
+    width: 20px;
+    height: 20px;
+    margin: 0.3rem 0.2rem;
+    border: var(--black) 1px solid;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: var(--white);
+    cursor: pointer;
+   border: red solid 1px;
+   transistion: width .2s ease-in;
+ }
+
+ .pic-selector.active {
+    border-radius: 10px;
+    width: 50px;
+    background-color: var(--black);
+ }
+
+

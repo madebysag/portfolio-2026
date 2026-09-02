@@ -47,6 +47,32 @@
             transform: scale(1.1);
         }
 
+        section.display_wrapper > div.loading {
+            background-color: var(--grey-1);
+            border: none;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%);
+            height: 20px;
+            width: 20px;
+            animation: loading 0.4s ease-in-out infinite alternate-reverse ;
+        }
+
+        @keyframes loading {
+            to {
+                transform: scale(1.5) translate(-25%);
+            }
+        }
+
+        section.display_wrapper > iframe {
+            height: 100%;
+            width: 100%;
+        }
+
+
+
     </style>
 
 </head>
@@ -94,7 +120,7 @@
                 <div data-target="ui" class="section">
                     <div class="title"><p>UI</p></div>
                     <div class="list">
-                        <div><a href="" class="demos_link">Carousel</a></div>
+                        <div><a href="/playground/demos/carousel/" class="demos_link">Carousel</a></div>
                         <div><a href="" class="demos_link">Accordion</a></div>
                         <div><a href="" class="demos_link">Card Transform on Scroll</a></div>
                     </div>
@@ -158,6 +184,8 @@
                     <use href="../static/icons/fullscreen.svg#full"></use>
                 </svg>
             </button>
+            <div class="loading"></div>
+            <iframe src="" frameborder="0"></iframe>
         </section>
 
     </div>

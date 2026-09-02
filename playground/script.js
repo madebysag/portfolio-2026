@@ -1,11 +1,20 @@
 const landingPage = document.querySelector(".landing_page")
 const displayPage = document.querySelector(".demos_display")
 const demosLinks = document.querySelectorAll("main a.demos_link")
-const backToMenuBtn = document.querySelector(".demos_display .page_nav button")
+
+const backToMenuBtn = displayPage.querySelector(".page_nav button")
+const loadingSpinner = displayPage.querySelector(".loading")
+const iFrame = displayPage.querySelector("iframe")
 
 function showDemo(url) {
     landingPage.hidden = true;
     displayPage.hidden = false;
+    loadingSpinner.hidden = false;
+    
+    iFrame.src = url;
+    iFrame.onload = () => {
+        loadingSpinner.hidden = true;
+    };
 }
 
 function hideDemo() {
