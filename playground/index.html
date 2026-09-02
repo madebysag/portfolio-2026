@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="../css/index.css">
     <script type="module" src="../js/index.js"></script>
+    <script type="module" src="./script.js"></script>
 
     <title>Sulaimon Abdulgafar — Playground</title>
 
@@ -43,15 +44,16 @@
 
         section.display_wrapper > button:hover {
             opacity: 0.75;
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
 
     </style>
 
 </head>
 <body>
-    <div class="transistion_wrapper" hidden>
+    <div class="transistion_wrapper">
         <canvas></canvas>
+        <h3 class="fade_content">PLAYGROUND/DEMOS <br>- by Sulaimon Abdulgafar</h3>
     </div>
 
     <div class="landing_page">
@@ -78,46 +80,46 @@
                 <p>Collection of my arts, designs, and experimentations. </p>
             </section>
 
-            <section class="projects">
+            <section class="projects table_list">
                 <nav>
                     <ul>
-                        <li><button class="active">All</button></li>
-                        <li><button>UI</button></li>
-                        <li><button>3D/WebbGL</button></li>
-                        <li><button>Canvas</button></li>
-                        <li><button>Others</button></li>
+                        <li><button data-target-id="all" class="active table_nav">All</button></li>
+                        <li><button data-target-id="ui" class="table_nav">UI</button></li>
+                        <li><button data-target-id="3D" class="table_nav">3D/WebGL</button></li>
+                        <li><button data-target-id="canvas" class="table_nav">Canvas</button></li>
+                        <li><button data-target-id="others" class="table_nav">Others</button></li>
                     </ul>
                 </nav>
 
-                <div class="section">
+                <div data-target="ui" class="section">
                     <div class="title"><p>UI</p></div>
                     <div class="list">
-                        <div><a href="">Carousel</a></div>
-                        <div><a href="">Accordion</a></div>
-                        <div><a href="">Card Transform on Scroll</a></div>
+                        <div><a href="" class="demos_link">Carousel</a></div>
+                        <div><a href="" class="demos_link">Accordion</a></div>
+                        <div><a href="" class="demos_link">Card Transform on Scroll</a></div>
                     </div>
                 </div>
 
-                <div class="section">
+                <div data-target="3D" class="section">
                     <div class="title"><p>3D/WebGL</p></div>
                     <div class="list">
-                        <div><a href="">Univase Scene</a></div>
+                        <div><a href="" class="demos_link">Univase Scene</a></div>
                     </div>
                 </div>
 
-                <div class="section">
+                <div data-target="canvas" class="section">
                     <div class="title"><p>Canvas</p></div>
                     <div class="list">
-                        <div><a href="">Ball Physics</a></div>
-                        <div><a href="">Scratch Reveal</a></div>
+                        <div><a href="" class="demos_link">Ball Physics</a></div>
+                        <div><a href="" class="demos_link">Scratch Reveal</a></div>
                     </div>
                 </div>
 
-                <div class="section">
+                <div data-target="others" class="section">
                     <div class="title"><p>Others</p></div>
                     <div class="list">
-                        <div><a href="">Text Reveal</a></div>
-                        <div><a href="">Loading Animation</a></div>
+                        <div><a href="" class="demos_link">Text Reveal</a></div>
+                        <div><a href="" class="demos_link">Loading Animation</a></div>
                     </div>
                 </div>
 
@@ -127,15 +129,15 @@
     </div>
 
 
-    <div class="demos_display" hidde >
+    <div class="demos_display" hidden >
 
         <nav class="page_nav">
-            <a href="#">
+            <button>
                 <svg  width="21.105" height="8.361">
                     <use href="../static/icons/back_arrow.svg#back_arrow"></use>
                 </svg>
                 <span>Back to Playground Menu</span>
-            </a>
+            </button>
         </nav>
 
         <header>

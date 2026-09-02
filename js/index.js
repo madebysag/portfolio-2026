@@ -3,7 +3,7 @@ import { BoxWorker, Transistion } from "./utils/Transistion.js"
 
 // About them switching
 const toggleButtons = [...document.querySelectorAll(".theme_toggle")]
-const [moonUrl, sunUrl] = [ "./static/icons/moon.svg", "./static/icons/sun.svg"]
+const [moonUrl, sunUrl] = [ "/static/icons/moon.svg", "/static/icons/sun.svg"]
 
 let isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches ?? false;
 
@@ -44,22 +44,44 @@ function completeTransistion() {
 
 function fadein() {
 
+    fadeContent.animate(
+        [
+            { opacity: 1}
+        ], 
+        {
+            duration: 300,
+            easing: "ease-in",
+            fill: "forwards"
+        }
+    );
+
     Transistion.showBoxes(
         BoxWorker.boxes,
-        0.5, 
+        0.3, 
         render, 
         fadeOut
     );
 }
 
 function fadeOut() {
+   
+    fadeContent.animate(
+        [
+            { opacity: 0}
+        ], 
+        {
+            delay: 1000,
+            duration: 300,
+            easing: "ease-in",
+            fill: "forwards"
+        }
+    );
 
-    fadeContent.style.opacity = 1
     setTimeout(() => {
 
       Transistion.hideBoxes(
         BoxWorker.boxes,
-        0.5, 
+        0.2, 
         render, 
         completeTransistion
     );  
@@ -83,7 +105,7 @@ if (tableLinks) {
             tableLinks.forEach(link => {
                 link.classList.remove("active")
             })
-            
+
             e.target.classList.add("active")
             
             const target = e.target.dataset.targetId;
