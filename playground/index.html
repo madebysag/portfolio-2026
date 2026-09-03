@@ -14,13 +14,18 @@
     <style>
         .demos_display > section {
             padding: 3rem 10vw 0rem;
-            max-width: 512px;
         }
+        
+        .demos_display > section p {
+            max-width: 512px;
+            margin-bottom: 1rem;
+        }
+        
 
         section.display_wrapper {
             margin: 3rem 10vw 0rem;
             padding: 0;
-            border: var(--grey-1) 2px solid;
+            border: var(--grey-1) 2px dashed;
             border-radius: 10px;
             height: 80vh;
             max-width: 80vw;
@@ -120,7 +125,18 @@
                 <div data-target="ui" class="section">
                     <div class="title"><p>UI</p></div>
                     <div class="list">
-                        <div><a href="/playground/demos/carousel/" class="demos_link">Carousel</a></div>
+                        <div>
+                            <a href="/playground/demos/carousel/" class="demos_link">
+                                Carousel
+                                <template class="article">
+                                    
+                                    <p>Carousel that moves and slide to first slide when the end is reached</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia optio odio sunt ab tempora mollitia consectetur fugit alias. Ratione nostrum atque cum quia est in repudiandae iusto quos eius voluptatibus.rst slide when the end is reached</p>
+                                    <p>Carousel that moves and slide to first slide when the end is reached</p>
+                                </template>
+                            </a>
+                        </div>
+
                         <div><a href="" class="demos_link">Accordion</a></div>
                         <div><a href="" class="demos_link">Card Transform on Scroll</a></div>
                     </div>
@@ -174,8 +190,8 @@
             <div><p>Sulaimon Abdulgafar</p></div>
         </header>
 
-        <section hidden >
-            <p>The art description, if any </p>
+        <section class="article" >
+            <!-- <p>The art description, if any </p> -->
         </section>
 
         <section class="display_wrapper">
