@@ -14,6 +14,7 @@
     <style>
         .demos_display > section {
             padding: 3rem 10vw 0rem;
+            /* transition: height 0.2s ease-in; */
         }
         
         .demos_display > section p {
@@ -31,6 +32,17 @@
             max-width: 80vw;
             overflow: hidden;
             position: relative;
+            /* transition: top, bottom, max-width, width, height ease-in 2s; */
+        }
+
+        section.display_wrapper.active {
+            top: 0;
+            left: 0px;
+            position: fixed;
+            max-width: stretch;
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
         }
 
         section.display_wrapper > button {
@@ -92,7 +104,7 @@
         <nav class="page_nav">
             <a href="/">
                 <svg  width="21.105" height="8.361">
-                    <use href="../static/icons/back_arrow.svg#back_arrow"></use>
+                    <use href="/static/icons/back_arrow.svg#back_arrow"></use>
                 </svg>
                 <span>Back Home</span>
             </a>
@@ -101,7 +113,7 @@
         <header>
             <div >
                 <h4 class="text-black" >Welcome to my Demos/Playground</h4>
-                <button type="button" class="theme_toggle"><img src="../static/icons/moon.svg" alt="Theme Toggle" ></button>
+                <button type="button" class="theme_toggle"><img src="/static/icons/moon.svg" alt="Theme Toggle" ></button>
             </div>
             <div><p>Sulaimon Abdulgafar</p></div>
         </header>
@@ -129,10 +141,9 @@
                             <a href="/playground/demos/carousel/" class="demos_link">
                                 Carousel
                                 <template class="article">
-                                    
                                     <p>Carousel that moves and slide to first slide when the end is reached</p>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia optio odio sunt ab tempora mollitia consectetur fugit alias. Ratione nostrum atque cum quia est in repudiandae iusto quos eius voluptatibus.rst slide when the end is reached</p>
-                                    <p>Carousel that moves and slide to first slide when the end is reached</p>
+                                    <p>For better developer experience, I made it a web component.</p>
+                                    <p>Made with love and laughter</p>
                                 </template>
                             </a>
                         </div>
@@ -176,7 +187,7 @@
         <nav class="page_nav">
             <button>
                 <svg  width="21.105" height="8.361">
-                    <use href="../static/icons/back_arrow.svg#back_arrow"></use>
+                    <use href="/static/icons/back_arrow.svg#back_arrow"></use>
                 </svg>
                 <span>Back to Playground Menu</span>
             </button>
@@ -185,7 +196,7 @@
         <header>
             <div >
                 <h4 class="text-black" >Univase 3D Scene</h4>
-                <button type="button" class="theme_toggle"><img src="../static/icons/moon.svg" alt="Theme Toggle" ></button>
+                <button type="button" class="theme_toggle"><img src="/static/icons/moon.svg" alt="Theme Toggle" ></button>
             </div>
             <div><p>Sulaimon Abdulgafar</p></div>
         </header>
@@ -197,7 +208,7 @@
         <section class="display_wrapper">
             <button type="button" class="fullscreen_toggle">
                 <svg width="16" height="16">
-                    <use href="../static/icons/fullscreen.svg#full"></use>
+                    <use href="/static/icons/fullscreen.svg#full"></use>
                 </svg>
             </button>
             <div class="loading"></div>
