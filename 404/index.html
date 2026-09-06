@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sulaimon Abdulgafar, madebysag, design engineer, back-end developer, web developer, interactive web developer, full-stack developer, designer, website" >
+
+    <link rel="stylesheet" href="/css/index.css">
+    <script type="module" src="/js/index.js"></script>
+    
+    <title>404 — Sulaimon Abdulgafar</title>
+
+    <style>
+        
+    </style>
+
+</head>
+<body>
+    <canvas id="snake"></canvas>
+
+    <nav class="page_nav">
+        <a href="/">
+            <svg  width="21.105" height="8.361">
+                <use href="/static/icons/back_arrow.svg#back_arrow"></use>
+            </svg>
+            <span>Home Page</span>
+        </a>
+    </nav>
+
+    <header>
+        <div >
+            <h4 class="text-black" >Oooops! Page is missing.</h4>
+            <button type="button" class="theme_toggle"><img src="/static/icons/moon.svg" alt="Theme Toggle" ></button>
+        </div>
+        <div><p>Sulaimon Abdulgafar</p></div>
+    </header>
+
+    <main>
+        <svg xmlns="http://www.w3.org/2000/svg" width="284.734" height="227.009" viewBox="0 0 284.734 227.009">
+            <use href="/404/404.svg#404"></use>
+        </svg>
+
+    </main>
+
+    
+    
+    <footer>BLURRING THE BORDER »»&angle;=º</footer>
+
+<script>
+
+const canvas = document.getElementById("snake")
+const ctx = canvas.getContext("2d")
+
+let height = canvas.height = window.innerHeight
+let width = canvas.width = window.innerWidth
+
+window.addEventListener("resize", () => {
+    height = canvas.height = window.innerHeight
+    width = canvas.width = window.innerWidth 
+})
+
+requestAnimationFrame(animate);
+
+let startTime = performance.now(),
+    lastTimestamp;   // for calculation Delta time
+
+function animate(currentTimestamp) {
+
+    const delta = lastTimestamp ? currentTimestamp - lastTimestamp : 16
+
+    lastTimestamp = currentTimestamp
+    
+    let elapsedTime = currentTimestamp - startTime; 
+
+    ctx.clearRect(0, 0, width, height)
+    ctx.fillRect(0, 0, 50, 100)
+
+}
+
+
+
+</script>
+
+</body>
+</html>

@@ -26,72 +26,77 @@ toggleButtons.forEach(btn => {
 // about transisiton
 const fadeContent = document.querySelector(".transistion_wrapper > .fade_content")
 const canvasWrapper = document.querySelector(".transistion_wrapper")
-const canvas = canvasWrapper.children[0]
+const canvas = canvasWrapper ? canvasWrapper.children[0] : null     
 
-const context = canvas.getContext("2d"),
-    width = canvas.width = window.innerWidth,
-    height = canvas.height = window.innerHeight;
+if (canvas) {
 
+    const context = canvas.getContext("2d"),
+        width = canvas.width = window.innerWidth,
+        height = canvas.height = window.innerHeight;
+ 
 
-function render() {
-    BoxWorker.render(context, BoxWorker.boxes, width, height)
-}
+    function render() {
+        BoxWorker.render(context, BoxWorker.boxes, width, height)
+    }
 
-function completeTransistion() {
-    canvasWrapper.style.opacity = 0
-    fadeContent.style.opacity = 0
-}
+    function completeTransistion() {
+        canvasWrapper.style.opacity = 0
+        fadeContent.style.opacity = 0
+    }
 
-function fadein() {
+    function fadein() {
+    console.log("kilosheyle");
 
-    fadeContent.animate(
-        [
-            { opacity: 1}
-        ], 
-        {
-            duration: 300,
-            easing: "ease-in",
-            fill: "forwards"
-        }
-    );
+        fadeContent.animate(
+            [
+                { opacity: 1}
+            ], 
+            {
+                duration: 300,
+                easing: "ease-in",
+                fill: "forwards"
+            }
+        );
 
-    Transistion.showBoxes(
-        BoxWorker.boxes,
-        0.3, 
-        render, 
-        fadeOut
-    );
-}
+        Transistion.showBoxes(
+            BoxWorker.boxes,
+            0.3, 
+            render, 
+            fadeOut
+        );
+    }
 
-function fadeOut() {
-   
-    fadeContent.animate(
-        [
-            { opacity: 0}
-        ], 
-        {
-            delay: 1000,
-            duration: 300,
-            easing: "ease-in",
-            fill: "forwards"
-        }
-    );
-
-    setTimeout(() => {
-
-      Transistion.hideBoxes(
-        BoxWorker.boxes,
-        0.2, 
-        render, 
-        completeTransistion
-    );  
-    }, 2000);
+    function fadeOut() {
     
+        fadeContent.animate(
+            [
+                { opacity: 0}
+            ], 
+            {
+                delay: 1000,
+                duration: 300,
+                easing: "ease-in",
+                fill: "forwards"
+            }
+        );
+
+        setTimeout(() => {
+
+        Transistion.hideBoxes(
+            BoxWorker.boxes,
+            0.2, 
+            render, 
+            completeTransistion
+        );  
+        }, 2000);
+        
+    }
+
+    BoxWorker.boxes = BoxWorker.makeBoxes()
+    
+    fadein()
+
 }
-
-BoxWorker.boxes = BoxWorker.makeBoxes()
-
-fadein()
 
 
 // About projects tab
