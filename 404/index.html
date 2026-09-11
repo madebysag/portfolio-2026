@@ -7,11 +7,17 @@
 
     <link rel="stylesheet" href="/css/index.css">
     <script type="module" src="/js/index.js"></script>
+    <script type="module" src="/404/script.js"></script>
     
     <title>404 — Sulaimon Abdulgafar</title>
 
     <style>
-        
+        #snake {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: -10;
+        }
     </style>
 
 </head>
@@ -45,41 +51,6 @@
     
     
     <footer>BLURRING THE BORDER »»&angle;=º</footer>
-
-<script>
-
-const canvas = document.getElementById("snake")
-const ctx = canvas.getContext("2d")
-
-let height = canvas.height = window.innerHeight
-let width = canvas.width = window.innerWidth
-
-window.addEventListener("resize", () => {
-    height = canvas.height = window.innerHeight
-    width = canvas.width = window.innerWidth 
-})
-
-requestAnimationFrame(animate);
-
-let startTime = performance.now(),
-    lastTimestamp;   // for calculation Delta time
-
-function animate(currentTimestamp) {
-
-    const delta = lastTimestamp ? currentTimestamp - lastTimestamp : 16
-
-    lastTimestamp = currentTimestamp
-    
-    let elapsedTime = currentTimestamp - startTime; 
-
-    ctx.clearRect(0, 0, width, height)
-    ctx.fillRect(0, 0, 50, 100)
-
-}
-
-
-
-</script>
 
 </body>
 </html>

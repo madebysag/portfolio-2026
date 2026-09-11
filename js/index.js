@@ -45,7 +45,6 @@ if (canvas) {
     }
 
     function fadein() {
-    console.log("kilosheyle");
 
         fadeContent.animate(
             [
