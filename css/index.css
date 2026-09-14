@@ -192,4 +192,27 @@ section.projects > div > .list a {
 footer{
     font-size: 10px;
     padding: 5rem 10vw 0.5rem;
+    animation: alternate;
+}
+
+footer::after{
+    content: "";
+    padding: 0 0.2rem;
+    display: inline-block;
+    animation: footer-anim 2s infinite;
+    animation-timing-function: steps(10);
+}
+
+@keyframes footer-anim {
+    0% { content: ">>>⋙⋙⋙»»=-∠=º" }
+    10% { content: ">>⋙⋙⋙»»=-∠=º>" }
+    20% { content: ">⋙⋙⋙»»=-∠=º>>" }
+    30% { content: "⋙⋙⋙»»=-∠=º>>>" }
+    40% { content: "⋙⋙»»=-∠=º>>>⋙" }
+    50% { content: "⋙»»=-∠=º>>>⋙⋙" }
+    60% { content: "»»=-∠=º>>>⋙⋙⋙" }
+    70% { content: "»=-∠=º>>>⋙⋙⋙»" }
+    80% { content: "=-∠=º>>>⋙⋙⋙»»" }
+    90% { content: "-∠=º>>>⋙⋙⋙»»=" }
+    100% { content: "=º>>>⋙⋙⋙»»=-∠" }
 }
