@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.carousel {
+   margin: 2rem 0;
+   height: 100%;
+   width: 100%;
+   position: relative;
+   overflow: hidden;
+}
+
+.carousel .slides-container {
+   width: 80%;
+   height: 80%;
+   margin: 0 auto;
+   overflow: visible;
+   display: flex;
+   transition: all 1s;
+}
+
+.slide {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* padding: 0 0.5rem; */
+}
+
+.slide-pic {
+    width: 98%;
+    height: fit-content;
+}
+
+.slide-desc {
+    position: absolute;
+    bottom: 10%;
+    text-align: center;
+    padding: 0 0.8rem;
+    background-color: #00000044;
+    backdrop-filter: blur(2px);
+    color: white;
+}
+
+.carousel-nav {
+    margin-top: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forward-btn,
+.backward-btn {
+   border: grey solid 1px;
+   background-color: white;
+   border-radius: 50%;
+   width: 50px;
+   height: 50px;
+   /* position: absolute;
+   top: 50%; */
+   z-index: 10;
+   cursor: pointer;
+   transition: background-color, color 0.2s ease-out; 
+}
+
+.forward-btn:hover,
+.backward-btn:hover {
+    background-color: hsla(0, 0%, 0%, 0.05);
+    color: white;
+}
+
+.forward-btn{
+   /* right: 0; */
+   /* transform: translateY(-50%) scaleX(-1); */
+   transform: scaleX(-1);
+   margin-left: 0.5rem;
+}
+
+.backward-btn {
+    /* left: 0; */
+    /* transform: translateY(-50%); */
+    margin-right: 0.5rem;
+}
+
+.slide-links {
+    padding: 0 1rem;
+}
+
+.slide-link {
+    width: 10px;
+    height: 10px;
+    margin: 0.3rem 0.2rem;
+    border: var(--black) 1px solid;
+    border-radius: 50%;
+    display: inline-block;
+    /* background-color: var(--white); */
+    background-color: white;
+    cursor: pointer;
+    border: grey solid 1px;
+    transition: all .2s ease-in;
+}
+
+.slide-link.active {
+    border-radius: 10px;
+    width: 50px;
+    background-color: var(--black);
+}

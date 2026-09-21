@@ -1,13 +1,2 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="19.492" height="18.518" viewBox="0 0 19.492 18.518">
-  <g id="Group_2" data-name="Group 2" transform="translate(-408.5 -42.5)">
-    <circle id="Ellipse_2" data-name="Ellipse 2" cx="3.898" cy="3.898" r="3.898" transform="translate(414.348 47.373)" fill="#737373"/>
-    <line id="Line_9" data-name="Line 9" y1="3.898" transform="translate(418.246 42.5)" fill="none" stroke="#d9d9d9" stroke-width="1"/>
-    <line id="Line_10" data-name="Line 10" x2="3.898" transform="translate(424.094 51.271)" fill="none" stroke="#d9d9d9" stroke-width="1"/>
-    <line id="Line_11" data-name="Line 11" x1="3.898" transform="translate(408.5 51.271)" fill="none" stroke="#d9d9d9" stroke-width="1"/>
-    <line id="Line_12" data-name="Line 12" y2="3.898" transform="translate(418.246 57.119)" fill="none" stroke="#d9d9d9" stroke-width="1"/>
-    <line id="Line_13" data-name="Line 13" y1="3.032" x2="3.032" transform="translate(410.666 55.062)" fill="none" stroke="#d9d9d9" stroke-width="1"/>
-    <line id="Line_16" data-name="Line 16" y1="3.032" x2="3.032" transform="translate(422.036 44.449)" fill="none" stroke="#d9d9d9" stroke-width="1"/>
-    <line id="Line_14" data-name="Line 14" x1="3.032" y1="3.032" transform="translate(422.794 55.062)" fill="none" stroke="#d9d9d9" stroke-width="1"/>
-    <line id="Line_15" data-name="Line 15" x1="3.032" y1="3.032" transform="translate(411.424 44.449)" fill="none" stroke="#d9d9d9" stroke-width="1"/>
-  </g>
-</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="18.5"><g data-name="Group 2" transform="translate(-408.5 -42.5)"><circle cx="3.9" cy="3.9" r="3.9" fill="#737373" data-name="Ellipse 2" transform="translate(414.3 47.4)"/><path fill="none" stroke="#d9d9d9" d="M418.2 46.4v-3.9" data-name="Line 9"/><path fill="none" stroke="#d9d9d9" d="M424 51.3h4" data-name="Line 10"/><path fill="none" stroke="#d9d9d9" d="M412.4 51.3h-3.9" data-name="Line 11"/><path fill="none" stroke="#d9d9d9" d="M418.2 57.1v4" data-name="Line 12"/><path fill="none" stroke="#d9d9d9" d="m410.7 58 3-3" data-name="Line 13"/><path fill="none" stroke="#d9d9d9" d="m422 47.4 3-3" data-name="Line 16"/><path fill="none" stroke="#d9d9d9" d="m425.8 58-3-3" data-name="Line 14"/><path fill="none" stroke="#d9d9d9" d="m414.4 47.4-3-3" data-name="Line 15"/></g></svg>

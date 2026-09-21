@@ -1,5 +1,6 @@
 // import Carousel from "./Carousel.js"
 import Carousel from "./DraggableCarousel.js"
+import * as Carousel2 from "./components/Carousel.js"
 
 // About Carousel...
 const gallery = document.querySelector(".gallery")

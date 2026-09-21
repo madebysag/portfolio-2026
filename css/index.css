@@ -199,7 +199,7 @@ footer::after{
     content: "";
     padding: 0 0.2rem;
     display: inline-block;
-    animation: footer-anim 2s infinite;
+    animation: footer-anim 2s alternate infinite;
     animation-timing-function: steps(10);
 }
 

@@ -13,9 +13,11 @@
 
 main {
    display: flex;
+   flex-direction: column;
    align-items: center;
    justify-content: center;
-   height: 100vh;
+   /* height: 100vh; */
+   padding-bottom: 3rem;
 }
 
 
@@ -23,44 +25,45 @@ main {
 * Carousel
 */
 
- .gallery {
-    height: 25rem;
-    width: 30rem;
-    position: relative;
-    overflow: hidden;
- }
+.gallery {
+   margin: 2rem 0;
+   height: 25rem;
+   width: 30rem;
+   position: relative;
+   overflow: hidden;
+}
 
- .gallery .forward-btn,
- .gallery .backward-btn {
+.gallery .forward-btn,
+.gallery .backward-btn {
    border: red solid 1px;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 50%;
-    z-index: 10;
- }
- 
+   width: 20px;
+   height: 20px;
+   position: absolute;
+   top: 50%;
+   z-index: 10;
+}
 
- .gallery .forward-btn{
-    right: 0;
-    transform: translateY(-50%) scalex(-1);
- }
 
- .gallery .backward-btn {
-    left: 0;
-    transform: translateY(-50%);
- }
+.gallery .forward-btn{
+   right: 0;
+   transform: translateY(-50%) scalex(-1);
+}
 
- .gallery .slides-container {
-    width: 80%;
-    height: 90%;
-    margin: 0 auto;
-    overflow: visible;
-    /* padding: 0.5rem; */
-    display: flex;
-    /* transform: rotateZ(-90deg); */
-    transition: all 1s;
-    }
+.gallery .backward-btn {
+   left: 0;
+   transform: translateY(-50%);
+}
+
+.gallery .slides-container {
+   width: 80%;
+   height: 90%;
+   margin: 0 auto;
+   overflow: visible;
+   /* padding: 0.5rem; */
+   display: flex;
+   /* transform: rotateZ(-90deg); */
+   transition: all 1s;
+}
     
  .slides-container .slide {
     min-height: 100%;
@@ -104,7 +107,7 @@ main {
     background-color: var(--white);
     cursor: pointer;
    border: red solid 1px;
-   transistion: width .2s ease-in;
+   transition: all .2s ease-in;
  }
 
  .pic-selector.active {
@@ -114,3 +117,18 @@ main {
  }
 
 
+/* Custom Element  */
+my-carousel {
+   height: 25rem;
+   width: 25rem;
+}
+
+/* my-slide {
+   margin: 0 0.5rem;
+} */
+
+h3 {
+    padding: 5rem 4rem 0.5rem 1rem;
+    width: 25rem;
+    color: #555;
+}
