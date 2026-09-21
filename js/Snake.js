@@ -1,45 +1,50 @@
-import Vec2 from "/js/utils/Vec2.js"
-
 const canvas = document.getElementById("snake")
 const ctx = canvas.getContext("2d")
 
-let height = canvas.height = window.innerHeight
-let width = canvas.width = window.innerWidth
+const dpr = window.devicePixelRatio || 1
+
+let height = canvas.height = window.innerHeight * dpr
+let width = canvas.width = window.innerWidth * dpr
+
+canvas.style.height = window.innerHeight + "px"
+canvas.style.width = window.innerWidth + "px"
 
 // Resize the window
 window.addEventListener("resize", () => {
-    height = canvas.height = window.innerHeight
-    width = canvas.width = window.innerWidth 
-})
+    height = canvas.height = window.innerHeight * dpr
+    width = canvas.width = window.innerWidth * dpr 
 
+    canvas.style.height = window.innerHeight + "px"
+    canvas.style.width = window.innerWidth  + "px"
+})
 
 
 // About snake
 const snakeSegmentTypes = [
     {
-        radius: 10,
+        radius: 10 * dpr,
         fill: true,
         radius2: false
     },
     {
-        radius: 10,
+        radius: 10 * dpr,
         fill: false,
         radius2: false
     },
     {
-        radius: 20,
+        radius: 20 * dpr,
         fill: true,
         radius2: false
     },
     {
-        radius: 20,
+        radius: 20 * dpr,
         fill: false,
         radius2: false
     },
     {
-        radius: 10,
+        radius: 10 * dpr,
         fill: true,
-        radius2: 20
+        radius2: 20 * dpr
     }
 ]
 
@@ -121,7 +126,7 @@ function drawSnake(ctx) {
 
     ctx.fillStyle = "hsl(0, 0%, 45%)"
     ctx.strokeStyle = "hsl(0, 0%, 85%)"
-    ctx.lineWidth = 2
+    ctx.lineWidth = 2 * dpr
     
     ctx.translate(width * 0.5, height * 0.5)
 
@@ -133,7 +138,7 @@ function drawSnake(ctx) {
 
         
         ctx.beginPath()
-        ctx.arc(x -segment.radius / 2, y - segment.radius / 2, segment.radius, 0, Math.PI * 2, false)
+        ctx.arc(x - segment.radius / 2, y - segment.radius / 2, segment.radius, 0, Math.PI * 2, false)
 
         if (segment.fill) ctx.fill()
             else ctx.stroke()
@@ -178,11 +183,10 @@ window.addEventListener("click", e => {
 
     currentPathState = STATE_MOVING_TO_CLICK
     startPos = {x: history[0].x, y: history[0].y}
-    targetPos = {x: e.clientX - width * 0.5, y: e.clientY - height * 0.5}    
+    targetPos = {x: e.clientX * dpr - width * 0.5, y: e.clientY * dpr - height * 0.5}    
     period = 0
 })
 
 function lerp(norm, min, max) {
     return (max - min) * norm + min;
 }
-
