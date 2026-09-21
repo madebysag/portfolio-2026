@@ -33,6 +33,20 @@ button, a {
     cursor: pointer;
 }
 
+/** 
+ * Utils Classes
+ * 
+ */
+.highlight {
+    font-weight: 500;
+    color: var(--grey);
+    background-color: var(--grey-1);
+    border-radius: 15px / 10px;
+    border: none;
+    padding: 0.1rem;
+}
+
+
 /* *
  * Page nav in playground and other pages
 */
@@ -137,6 +151,7 @@ main > section > p {
     margin-bottom: 1rem;
 }
 
+a.section-link,
 main > section > p > a {
     font-weight: 700;
     color: var(--black);
@@ -204,14 +219,14 @@ footer::after{
 }
 
 @keyframes footer-anim {
-    0% { content: ">>>⋙⋙⋙»»=-∠=º" }
-    10% { content: ">>⋙⋙⋙»»=-∠=º>" }
-    20% { content: ">⋙⋙⋙»»=-∠=º>>" }
-    30% { content: "⋙⋙⋙»»=-∠=º>>>" }
-    40% { content: "⋙⋙»»=-∠=º>>>⋙" }
-    50% { content: "⋙»»=-∠=º>>>⋙⋙" }
-    60% { content: "»»=-∠=º>>>⋙⋙⋙" }
-    70% { content: "»=-∠=º>>>⋙⋙⋙»" }
+    0% { content: "<<<⋘⋘⋘««=-∠=º" }
+    10% { content: "<<⋘⋘⋘««=-∠=º>" }
+    20% { content: "<⋘⋘⋘««=-∠=º>>" }
+    30% { content: "⋘⋘⋘««=-∠=º>>>" }
+    40% { content: "⋘⋘««=-∠=º>>>⋙" }
+    50% { content: "⋘««=-∠=º>>>⋙⋙" }
+    60% { content: "««=-∠=º>>>⋙⋙⋙" }
+    70% { content: "«=-∠=º>>>⋙⋙⋙»" }
     80% { content: "=-∠=º>>>⋙⋙⋙»»" }
     90% { content: "-∠=º>>>⋙⋙⋙»»=" }
     100% { content: "=º>>>⋙⋙⋙»»=-∠" }

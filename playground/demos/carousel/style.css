@@ -18,6 +18,7 @@ main {
    justify-content: center;
    /* height: 100vh; */
    padding-bottom: 3rem;
+   background-color: hsla(0, 100%, 100%, 0.3);
 }
 
 
@@ -131,4 +132,18 @@ h3 {
     padding: 5rem 4rem 0.5rem 1rem;
     width: 25rem;
     color: #555;
+}
+
+
+@media screen and (max-width: 400px) {
+  .gallery,
+  my-carousel {
+   height: 90vh;
+   width: 90vw;
+  }
+
+  h3 {
+   width: 90vw;
+   padding: 5rem 0.5rem 0.5rem;
+  }
 }

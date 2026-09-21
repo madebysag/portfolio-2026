@@ -3,14 +3,24 @@ import Vec2 from "/js/utils/Vec2.js"
 const canvas = document.getElementById("snake")
 const ctx = canvas.getContext("2d")
 
-let height = canvas.height = window.innerHeight
-let width = canvas.width = window.innerWidth
+const dpr = window.DevicePixelRatio || 1
+
+let height = canvas.height = window.innerHeight * dpr
+let width = canvas.width = window.innerWidth * dpr
+
+canvas.style.height = window.innerHeight *10
+canvas.style.width = window.innerWidth * 10
 
 // Resize the window
 window.addEventListener("resize", () => {
-    height = canvas.height = window.innerHeight
-    width = canvas.width = window.innerWidth 
+    height = canvas.height = window.innerHeight * dpr
+    width = canvas.width = window.innerWidth * dpr 
+
+    canvas.style.height = window.innerHeight
+    canvas.style.width = window.innerWidth 
 })
+
+ctx.scale(dpr, dpr)
 
 
 
