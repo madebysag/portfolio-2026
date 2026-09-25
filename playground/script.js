@@ -125,9 +125,11 @@ function toggleFullscreen(element) {
 
 demosLinks.forEach(link => {
     link.addEventListener("click", e => {
-        e.preventDefault()
+        if (!e.currentTarget.href.match("/coming-soon")) {
+            e.preventDefault()
 
-        showDemo(e.currentTarget)
+            showDemo(e.currentTarget)
+        }
     })
 })
 
