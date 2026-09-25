@@ -141,38 +141,63 @@
                             <a href="/playground/demos/carousel/" class="demos_link">
                                 Carousel
                                 <template class="article">
-                                    <p>Carousel that moves and slide to first slide when the end is reached</p>
-                                    <p>For better developer experience, I made it a web component - <span class="highlight">&lt;my-carousel&gt;</span></p>
-                                    <p>You can view it fully by clicking <a target="blank" href="/playground/demos/carousel" class="section-link">here</a></p>
+                                    <p>Carousel for text and images, moves to first slide when the end is reached</p>
+                                    <p>For better developer experience, I made it a web component. The mark looks like:
+                                    <p>For better developer experience, I made it a custom element <code class="highlight">&lt;my-carousel></code></p>
+                                    <p>What the mark up looks like:
+                                        <br>
+                                        <pre class="highlight">
+< my-carousel>
+    < my-slide>
+        Slide one text goes here
+    < /my-slide>
+
+    < my-slide>
+        Slide two text goes here
+    < /my-slide>
+< /my-carousel>
+                                        </pre>
+                                    </p>
+                                    <p>See it in full glory by clicking <a target="blank" href="/playground/demos/carousel" class="section-link">here</a></p>
                                 </template>
                             </a>
                         </div>
 
-                        <div><a href="" class="demos_link">Accordion</a></div>
-                        <div><a href="" class="demos_link">Card Transform on Scroll</a></div>
+                        <div><a href="" class="demos_link coming-soon">Accordion</a></div>
+                        <div><a href="" class="demos_link coming-soon">Card Transform on Scroll</a></div>
                     </div>
                 </div>
 
                 <div data-target="3D" class="section">
                     <div class="title"><p>3D/WebGL</p></div>
                     <div class="list">
-                        <div><a href="" class="demos_link">Univase Scene</a></div>
+                        <div>
+                            <a href="https://madebysag.github.io/univase-3d-scene" class="demos_link">
+                                Univase Scene
+                                <template class="article">
+                                    <p>A 3D scene for Univase, a flower vase vendor</p>
+                                    <p>I experimented with older version of THREE.js, which skip the build phase. Just linking the library and other scripts directly to <span class="highlight">index.html</span></p>
+                                    <p>The models were made from scratch in <span class="highlight">Blender</span>. I did some UV unwrapping, baked the textures, export the models and texture, then wrap the baked texture on them with THREE.js, hence no light was created in the scene.</p>
+                                    <p>Enough of the technical jargon, click <a target="blank" href="https://madebysag.github.io/univase-3d-scene" class="section-link">here</a> to have a full screen experience.</p>
+                                </template>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <div data-target="canvas" class="section">
                     <div class="title"><p>Canvas</p></div>
                     <div class="list">
-                        <div><a href="" class="demos_link">Ball Physics</a></div>
-                        <div><a href="" class="demos_link">Scratch Reveal</a></div>
+                        <div><a href="" class="demos_link coming-soon">Ball Physics</a></div>
+                        <div><a href="" class="demos_link coming-soon">Scratch Reveal</a></div>
                     </div>
                 </div>
 
                 <div data-target="others" class="section">
                     <div class="title"><p>Others</p></div>
                     <div class="list">
-                        <div><a href="" class="demos_link">Text Reveal</a></div>
-                        <div><a href="" class="demos_link">Loading Animation</a></div>
+                        <div><a href="" class="demos_link coming-soon">Text Reveal</a></div>
+                        <div><a href="" class="demos_link coming-soon">Loading Animation</a></div>
                     </div>
                 </div>
 

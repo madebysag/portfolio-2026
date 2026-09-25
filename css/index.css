@@ -12,7 +12,8 @@
 }
 
 :root {
-    --grey: hsl(0, 0%, 45%);
+    /*--grey: hsl(0, 0%, 45%);*/
+    --grey: hsl(0, 0%, 35%);
     --grey-1: hsl(0, 0%, 85%);
     --grey-2: hsl(0, 0%, 98%);
     --black: hsl(0, 5%, 15%);
@@ -24,6 +25,8 @@
 .dark-theme {
     --grey: hsl(0, 0%, 85%);
     --black: hsl(0, 0%, 98%);
+    --grey-1: hsl(0, 0%, 45%);
+    --grey-2: hsl(0, 0%, 15%);
     
     background-color: hsl(0, 5%, 15%);
 }
@@ -37,13 +40,33 @@ button, a {
  * Utils Classes
  * 
  */
+.coming-soon {
+    position: relative;
+}
+
+.coming-soon::before {
+    content: "coming soon";
+    position: absolute;
+    background-color: var(--black);
+    color: var(--grey);
+    border-radius: 15px;
+    position: absolute;
+    transform: scale(.5, 0.7);
+    left: -20px;
+    top: -8px;
+    text-wrap: nowrap;
+    opacity: 0.5;
+    padding: 0px 3px;
+    z-index: -10;
+}
+
 .highlight {
     font-weight: 500;
     color: var(--grey);
     background-color: var(--grey-1);
     border-radius: 15px / 10px;
     border: none;
-    padding: 0.1rem;
+    padding: 0.1rem 0.3rem;
 }
 
 
@@ -75,6 +98,7 @@ nav.page_nav a > span {
     pointer-events: none;
     background-color: hsl(0, 0%, 99%);
     transition: opacity .5s ease-in;
+    z-index: 10;
 }    
 
 .dark-theme .transistion_wrapper {
@@ -200,7 +224,7 @@ section.projects > div > .list a {
     display: inline-block;
     text-decoration: underline;
     text-decoration-thickness: 2px;
-    padding-right: 0.5rem;
+    padding: 0 0.5rem;
     margin-bottom:  0.8rem;
 }
 
