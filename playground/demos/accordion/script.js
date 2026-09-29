@@ -1,3 +1,6 @@
+// import * as AccordionComponent from "./Accordion.js";
+import * as AccordionComponent from "./Accordion2.js";
+
 class Accordion {
     constructor(element) {
         this.element = element;
