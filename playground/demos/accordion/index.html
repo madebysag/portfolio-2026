@@ -3,96 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script type="module" src="script.js"></script>
+    <!-- <script type="module" src="script.js"></script> -->
+    <script type="module" src="Accordion.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-weight: 500;
+            font-family: "Noto Sans", sans-serif;
+        }
+
+        :root {
+            --white: hsl(0, 0%, 97%);
+            --black: hsl(0, 0%, 15%);
+            --gray: hsl(0, 0%, 85%);
+        }
+
+        body {
+            background-color: hsl(0, 0%, 99%);
+            display: grid;
+            place-items: center;
+            font: 900 1rem sans-serif;
+            width: 100%;
+            height: 100vh;
+            padding: 4rem 0rem;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+        }
+    </style>
+
     <title>Accordion</title>
 </head>
 <body>
-    <div id="accordion_container">
-        
-        <div class="accordion">
-            <h1 class="accordion_header">Alhamdulilah <i class="accordion_arrow">&uarr;</i></h1>
-            
-            <p class="accordion_content ">This looks like it will not take me 3 solid days to build... I later got it tho. </p>
-            
-        </div>
 
-        <div class="accordion">
-            <h1 class="accordion_header">What next??? <i class="accordion_arrow">&uarr;</i></h1>
-            
-            <p class="accordion_content ">Should I go for canvas arts? Or maybe WebGL... 3D huh... here we gooooooooooooooooooooooooo</p>
-            
-        </div>
-
-        <div class="accordion">
-            <h1 class="accordion_header">Heading <i class="accordion_arrow">&uarr;</i></h1>
-            
-            <p class="accordion_content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil quo, deserunt eos illum rerum, porro tenetur quae doloremque nobis vero dolore atque officia perspiciatis et laboriosam explicabo accusamus similique amet.</p> 
-            
-        </div>
-    </div>
-
+    <h4>FAQ</h4>
+    <p>Some frequently asked questions</p>
     <my-accordion>
-        <accordion-tab>
-            <tab-heading> Heading or title goes here Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Consectetur porro, sit numquam deleniti possimus ratione dolorum quia voluptas cum culpa sequi, ullam nulla iure asperiores nisi debitis, iste nesciunt assumenda. </tab-heading>
-            <tab-body> Body content goes here Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, maiores temporibus! Nostrum illum, fuga. Quidem, maiores quam suscipit architecto eos praesentium vero illum corporis? Tenetur non, exercitationem facilis corporis voluptatum. </tab-body>
+        <accordion-tab >
+            <tab-heading>What services does madebysag offer? </tab-heading>
+            <tab-body>We specialize in modern web design, custom front-end development, interactive user experiences (including canvas and 3D/WebGL interfaces), and complete digital brand identity packages. </tab-body>
         </accordion-tab>
         <accordion-tab>
-            <tab-heading> Heading or title goes here </tab-heading>
-            <tab-body> Body content goes here Lorem ipsum dolor, sit amet consectetur adipisicing elit. A quae enim impedit maxime velit, aut harum. Cumque, rem sequi quibusdam assumenda in asperiores, sed quam aliquam, cupiditate dolorem iure, repellendus. </tab-body>
+            <tab-heading>How long does a typical project take to complete?</tab-heading>
+            <tab-body> Project timelines vary based on complexity. A standard custom website typically takes 2 to 4 weeks from concept to launch, while complex interactive or custom web applications may take longer. We always establish clear milestones before starting.</tab-body>
         </accordion-tab>
         <accordion-tab>
-            <tab-heading> Heading or title goes here Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque amet impedit repudiandae! Necessitatibus pariatur alias quis, similique ullam nemo. Doloremque impedit, laudantium ea at asperiores ab assumenda unde vitae aperiam. </tab-heading>
-            <tab-body> Body content goes here Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Non tenetur et numquam earum facere sed nemo adipisci, consectetur assumenda nulla doloribus ad consequatur dolore dolorum. Minus est mollitia nam dolorem. Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Possimus id magni perferendis? Tenetur nostrum placeat provident labore? Nostrum, similique animi! Ipsam minima exercitationem, eos, recusandae officia error qui inventore temporibus.
-            Itaque nesciunt fuga mollitia doloremque quo ab laborum aperiam, nobis, repudiandae rem nemo nam recusandae similique consectetur harum autem alias. Rerum consequatur quae, ratione doloribus harum nobis provident, voluptates inventore.
-            Eum ab accusamus eveniet necessitatibus vitae ad saepe animi eius quis voluptas molestiae id omnis velit, sit quibusdam sed asperiores quos, distinctio fugiat corrupti voluptate. Earum, atque soluta facere distinctio. Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Molestiae impedit repellat placeat nihil laborum unde debitis provident amet, ut inventore ratione recusandae quaerat at quidem pariatur quisquam? Tempora, officia, possimus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita laudantium corrupti, magni eos ea, minus impedit voluptates explicabo assumenda natus qui suscipit, iure blanditiis beatae eius sequi quae nulla est.
-            Rem, architecto. Suscipit ipsum, eveniet labore. Mollitia id tempore neque ad quasi cupiditate quaerat repellat voluptas possimus magnam ratione, minima! Dicta accusantium, aliquam dolorem, quibusdam maxime quam ullam optio voluptatum?
-            Debitis, quas tempora, nisi odit, sunt, deserunt reiciendis id voluptatem ipsum quam corrupti porro ipsa magni modi neque iste. Reiciendis minus vel consequuntur, deserunt, unde facilis doloremque hic tempore mollitia.
-            Beatae autem, quis dignissimos ea magnam inventore quasi vero odio nesciunt at, maiores, magni tenetur ut nisi, aliquid. Totam, praesentium. Ipsa veniam cumque alias vitae numquam officiis. Rerum, at, sapiente.
-            Minima magni temporibus ipsam! Minima quam quasi doloremque, dignissimos distinctio accusamus nihil natus corrupti quaerat pariatur in sunt asperiores! Eaque eum nihil optio facilis tempora dignissimos sunt atque, dolore, error!
-            Incidunt aut iusto, amet quia! Cupiditate necessitatibus adipisci deserunt ipsa voluptas vel repudiandae eaque aperiam neque perspiciatis optio eligendi exercitationem, porro explicabo repellendus doloremque incidunt eveniet id eius esse iure.
-            Officia natus, incidunt soluta aspernatur nesciunt harum, odio praesentium aperiam culpa necessitatibus cum, quidem, commodi voluptates facere repudiandae voluptas sequi enim vel? Enim cumque eum, asperiores nihil, nulla recusandae quasi.
-            Nihil culpa nam placeat ipsam excepturi cum veniam eligendi in ex, adipisci quasi error beatae tenetur illum incidunt iusto doloribus inventore labore. Fugiat illum optio velit ea ipsa provident, adipisci.
-            Exercitationem iusto, quibusdam laudantium necessitatibus rem ad hic adipisci id, doloribus. Quos earum eaque, at veniam, aut corrupti vero praesentium doloremque vitae ab, ratione iusto explicabo pariatur maxime exercitationem repudiandae?
-            Quibusdam architecto dolor iste nihil ducimus ut sapiente quas laborum non sit voluptatem recusandae, ullam? Nam sed esse nisi corporis, soluta fugit quo blanditiis et expedita dolorem? Iste et, temporibus?</tab-body>
+            <tab-heading>Do you provide ongoing maintenance and support after launch?</tab-heading>
+            <tab-body>Yes! We offer post-launch support and maintenance plans to ensure your site stays secure, fast, and up to date as your business grows.</tab-body>
         </accordion-tab>
-    </my-accordion>
-    <div class=""> 
-    </div>
-
-    <div class="accordion_wrapper">
-        <div class="accordion_tab">
-            <svg class="accordion_btn" height="18px" width="18px"><use href="./icon.svg"></svg>
-            <h4 class="heading">This is a title</h4>
-        </div>
-        <div class="accordion_tab">
-            <svg class="accordion_btn" height="18px" width="18px"><use href="./icon.svg"></svg>
-            <h4 class="heading">This is a title</h4>
-        </div>
-        <div class="accordion_tab">
-            <svg class="accordion_btn" height="18px" width="18px"><use href="./icon.svg"></svg>
-            <h4 class="heading">This is a title Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
-        </div>
-        <div class="accordion_tab">
-            <svg class="accordion_btn" height="18px" width="18px"><use href="./icon.svg"></svg>
-            <h4 class="heading">This is a title</h4>
-            <div class="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore rerum nisi vero corrupti dignissimos similique quae laudantium quibusdam ipsum doloremque libero, quos non iure, expedita at magnam veritatis quas aspernatur.</div>
-        </div>
-        <div class="accordion_tab">
-            <svg class="accordion_btn" height="18px" width="18px"><use href="./icon.svg"></svg>
-            <h4 class="heading">This is a title Lorem ipsum dolor sit amet consectetur adipisicing, elit. Tempora, molestias tenetur nemo libero neque mollitia? Ipsa delectus dolore aliquid, reiciendis? Velit aperiam fuga amet atque eveniet obcaecati necessitatibus at nesciunt.</h4>
-            <div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, nemo. Natus eum in laboriosam sequi nihil distinctio, exercitationem dolorem quasi labore dolor, vel similique, ipsa tempora totam nulla. Nostrum, velit.</div>
-        </div>
-        <div class="accordion_tab">
-            <svg class="accordion_btn" height="18px" width="18px"><use href="./icon.svg"></svg>
-            <h4 class="heading">This is a title</h4>
-            <div class="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iusto ea tenetur, sapiente. Quaerat exercitationem, perferendis officia maiores cumque quae vel, repellat debitis labore aspernatur doloribus soluta. Ipsum, vel, architecto.</div>
-        </div>
-    </div> 
+        <accordion-tab>
+            <tab-heading>How do we get started on a project together?</tab-heading>
+            <tab-body>Simply reach out through our contact form or send us an email with a brief overview of your vision. We’ll schedule a quick discovery call to discuss your goals, timeline, and budget before providing a detailed proposal.</tab-body>
+        </accordion-tab>
+    </my-accordion> 
 </body>
 </html>

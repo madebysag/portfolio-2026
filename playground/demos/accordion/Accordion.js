@@ -7,153 +7,143 @@ const accordionStyle = /* css */`
     font-family: "Noto Sans", sans-serif;
 }
 
-:root {
+my-accordion, accordion-tab, tab-heading, tab-body { 
+    display: block; 
+    word-break: break-word;
+}
+
+my-accordion {
     --white: hsl(0, 0%, 97%);
     --black: hsl(0, 0%, 15%);
     --gray: hsl(0, 0%, 85%);
-}
 
-.accordion_wrapper {
     max-width: 600px;
     padding: 1rem;
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 0.5rem;
-    transition: grid 0.2s ease-out;
 }
 
-.accordion_wrapper > .accordion_tab {
+accordion-tab {
     background: var(--black);
     border: none;
     border-radius: 24px;
     position: relative;
+    overflow: hidden;
+    transition: height 0.2s ease-out;
 }
 
-.accordion_tab > .accordion_btn {
+accordion-tab > .accordion_btn {
     padding: 0.5rem;
     border-radius: 50%;
     position: absolute;
     top: 1.2rem;
     right: 1rem;
     box-sizing: content-box;
-    transition: background-color, transform 0.2s ease-out;
+    s: background-color, transform 0.2s ease-out;
+    pointer-events: none;
 }
 
-.accordion_tab.active > .accordion_btn {
-    transform: rotate(45deg);
+accordion-tab.active > .accordion_btn {
+    transform: rotate(135deg);
 }
 
-.accordion_tab > .accordion_btn:hover {
+accordion-tab > .accordion_btn:hover {
     background-color: hsla(0, 0%, 100%, 0.2);
 }
 
-.accordion_wrapper > .accordion_tab > .heading {
+my-accordion > accordion-tab > tab-heading {
     padding: 1.5rem 3rem;
     color: var(--gray);
     width:  100%;
     cursor: pointer;
 }
 
-.accordion_wrapper > .accordion_tab > .body {
+my-accordion > accordion-tab > tab-body {
     padding: 1.5rem 3rem;
     background-color: var(--white);
     color: var(--black);
     width:  100%;
     border: 2px solid var(--black);
     border-radius: 24px;
-    transition: opacity 0.2s ease-out;
-    opacity: 0;
-    display: none;
-}
-.accordion_wrapper > .accordion_tab.active > .body {
-    opacity: 1;
-    display: block;
 }
 
 `;
 
 class Accordion extends HTMLElement {
 
-    constructor() {
-        super()
-
-        // this.slottedContent = [...this.children].reduce((res, curr) => {
-        //     res += `${curr.outerHTML}`
-        // })
-
-        // // console.log(this.slottedContent)
-
-        // this.innerHTML = /* html */`
-        // <style>${accordionStyle}</style>
-
-        // <div class="accordion_wrapper">
-        //     ${this.slottedContent}
-        // </div>
-        // `;
-
-        // this.shadow = this.attachShadow({mode: "open"})
-        // this.innerHTML = this.template
-        // this.querySelector("accordion_wrapper").i
-
-    }
-
     connectedCallback() {
 
         const fragment = new DocumentFragment()
+
+        // Moves the firstChild physically from the dom tree
         while (this.firstChild) {
             fragment.append(this.firstChild)
         }
 
         this.innerHTML = /* html */`
-            <style>${accordionStyle}</style>
-            <div class="accordion_wrapper"></div>
-        `;   
+            <style>${accordionStyle}</style>`;   
 
-        this.querySelector(".accordion_wrapper").append(fragment)
-
-        this.addEventListener("click", e => {
-
-        console.dir(e.currentTarget)
-        console.dir(e.currentTarget)
-        })
-
+        this.append(fragment)
     }
 }
 
 
 class Tab extends HTMLElement {
-    constructor() {
-        super()
+
+    connectedCallback() {
+
+        const fragment = new DocumentFragment()
+
+        // Moves the firstChild physically from the dom tree
+        while (this.firstChild) {
+            fragment.append(this.firstChild)
+        }
+
         this.innerHTML = /* html */`
-            <div class="accordion_tab">
-                <svg class="accordion_btn" height="18px" width="18px"><use href="./icon.svg"></svg>
-                <slot></slot>
-            </div>
-        `;
+            <svg class="accordion_btn" height="18px" width="18px"><use href="./icon.svg"></svg>
+        `;   
+
+        this.append(fragment)
+
+        this.style.height = `${this.querySelector("tab-heading").clientHeight}px`
+
     }
+
 }
 
 class Heading extends HTMLElement {
-    constructor() {
-        super()
-        this.innerHTML = /* html */`
-            <h4 class="heading"><slot></slot></h4>
-        `;
-    }
 
     connectedCallback() {
+        const fragment = new DocumentFragment()
+
+        // Moves the firstChild physically from the dom tree
+        while (this.firstChild) {
+            fragment.append(this.firstChild)
+        }
+
+        this.innerHTML = ""
+        this.append(fragment)
+
         this.addEventListener("click", e => {
-            console.log(this.parentElement)
+            openTab(this.parentElement)
         })
     }
 }
 
 class Body extends HTMLElement {
-    constructor() {
-        super()
-        this.innerHTML = /* html */`
-            <div class="body"><slot></slot></div>
-        `;
+
+    connectedCallback() {
+        const fragment = new DocumentFragment()
+
+        // Moves the firstChild physically from the dom tree
+        while (this.firstChild) {
+            fragment.append(this.firstChild)
+        }
+
+        this.innerHTML = ""
+        this.append(fragment)
+
     }
 }
 
@@ -162,4 +152,29 @@ customElements.define("accordion-tab", Tab);
 customElements.define("tab-heading", Heading);
 customElements.define("tab-body", Body);
 
-export {Accordion, Tab, Heading, Body}
+
+function openTab(tab, closeOthers = true) {
+
+    const currentTabIsOpen = tab.classList.contains("active")
+
+    if (closeOthers) {
+        [...document.querySelectorAll("accordion-tab")].forEach(currentTab => {
+            currentTab.style.height = `${currentTab.querySelector("tab-heading").clientHeight}px` || "0px"
+            currentTab.classList.remove("active")
+        });
+    }
+
+    if(!currentTabIsOpen) {
+
+        tab.style.height = `${tab.querySelector("tab-heading").clientHeight + tab.querySelector("tab-body").clientHeight + 4}px` || "0px"
+        tab.classList.add("active")
+    } else {
+
+        tab.style.height = `${tab.querySelector("tab-heading").clientHeight}px` || "0px"
+        tab.classList.remove("active")
+    }
+}
+
+openTab(document.querySelector("accordion-tab"))    // Open first tab
+
+// export {Accordion, Tab, Heading, Body}
